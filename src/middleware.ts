@@ -19,7 +19,7 @@ export async function middleware(req: NextRequest) {
 	const referer = req.headers.get('referer') ?? 'unknown'
 	const host = req.headers.get('host') ?? 'unknown'
 	const proto = req.headers.get('x-forwarded-proto') ?? 'unknown'
-	const address = `${proto}://${host}`
+	const address = `http://127.0.0.1:${process.env.PORT || 3000}`
 	const sourceInfo = `IP=${ip} Host=${host} Proto=${proto} Referer=${referer} UA="${userAgent}"`
 
 	const authHeader = req.headers.get('authorization')

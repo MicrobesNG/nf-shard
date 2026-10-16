@@ -17,6 +17,7 @@ COPY --from=build /app/build/standalone ./
 COPY --from=build /app/build/static ./build/static
 COPY --from=build /app/prisma ./prisma
 
+ENV HOSTNAME="0.0.0.0"
 EXPOSE 3000
 
 CMD ["sh", "-c", "yarn run prisma migrate deploy && node server.js"]

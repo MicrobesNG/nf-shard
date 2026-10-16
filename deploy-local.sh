@@ -128,6 +128,7 @@ services:
       APP_USERNAME: ${APP_USERNAME:?}
       APP_PASSWORD: ${APP_PASSWORD:?}
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      HOSTNAME: "0.0.0.0"
     ports:
       - 3000:3000
     profiles:
